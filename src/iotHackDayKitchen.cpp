@@ -621,6 +621,10 @@ void waterTimedOut() {
 
 void touchLoop() {
         //printBinary(touches);
+
+        //this spams the serial but is good for testing the touch sensors
+        Serial.println(String(touches, BIN));
+
         uint8_t oneRead = digitalRead(touchOnePin);
         if (oneRead == NOT_TOUCHING) {
             touches &= ~(1 << ONE_INDEX);
